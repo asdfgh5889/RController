@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <com.erz.joysticklibrary.JoyStick
+        android:id="@+id/throttle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:buttonColor="#55ff0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:padColor="#C9D"
+        app:percentage="25"
+        app:stayPut="false" />
+
+    <com.erz.joysticklibrary.JoyStick
+        android:id="@+id/steering"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="0dp"
+        app:buttonColor="#55ff0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:padColor="#FD8"
+        app:percentage="25"
+        app:stayPut="false"
+        />
+
+    <LinearLayout
+        android:id="@+id/connection"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/steering"
+        app:layout_constraintStart_toEndOf="@+id/throttle">
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="IP Address"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+        <Button
+            android:id="@+id/init"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="initClient"
+            android:text="Init"
+            tools:layout_editor_absoluteX="488dp"
+            tools:layout_editor_absoluteY="295dp" />
+
+        <Button
+            android:id="@+id/connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="connect"
+            android:text="Connect"
+            tools:layout_editor_absoluteX="500dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendTestMessage"
+            android:text="test"
+            tools:layout_editor_absoluteX="390dp"
+            tools:layout_editor_absoluteY="304dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
